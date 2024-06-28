@@ -1,0 +1,77 @@
+html,
+body {
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 600;
+    color: #a09dd2;
+    font-family: "Montserrat", sans-serif;
+}
+
+[class*="__container"] {
+    max-width: 1430px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+// цвета
+$blue: #1cf1ff;
+$white: #ffffff;
+$black: #171624;
+$orange: #FFB876;
+$pink: #FF93C0;
+$grey: #A09DD2;
+$dark: #282842;
+$bg: #1b192c;
+
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: $black;
+}
+%btn {
+    margin-top: 60px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: 22.4px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    width: 180px;
+    height: 60px;
+    padding: 20px 28px 20px 28px;
+    border-radius: 8px;
+    color: $white;
+    background: linear-gradient(0deg, #f8326d, #f8326d);
+    background: linear-gradient
+        (180deg, rgba(255, 184, 100, 0.9) 0%, rgba(248, 50, 109, 0) 100%);
+
+    &:hover {
+        background: -webkit-linear-gradient(0deg, #f8326d, #f8326d);
+        background: linear-gradient(180deg, #ffb864, #f8326d);
+        transition: 2s;
+    }
+}
+
+
+
+@mixin desktop {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+

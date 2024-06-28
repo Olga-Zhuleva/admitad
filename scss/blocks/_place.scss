@@ -1,0 +1,169 @@
+.place {
+    padding-top: 8.75rem;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    &__sections {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+
+        &::before {
+            content: "";
+            background-image: url("../img/Polygon.png");
+            width: 20rem;
+            height: 20rem;
+            position: absolute;
+            top: 20%;
+            right: 29%;
+            z-index: 1;
+        }
+    }
+
+    &__sections::nth-child(3) {
+        max-height: 15rem;
+    }
+
+    &__sections-body {
+        position: relative;
+        overflow: hidden;
+        padding: 2.5rem;
+        border-radius: 1rem;
+        z-index: 2;
+        backdrop-filter: blur(1.25rem);
+        background: linear-gradient(
+            216.8deg,
+            rgba(41, 39, 70, 0.2) 5.55%,
+            rgba(56, 54, 99, 0.2) 98.31%
+        );
+
+        & img {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    &__btn {
+        @extend %btn;
+    }
+
+    &__sections-title {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.75rem;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        li {
+            font-weight: 500;
+            line-height: 1.4rem;
+            color: $white;
+        }
+    }
+    &__title {
+        margin-bottom: 1.25rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 3.25rem;
+        color: $white;
+    }
+    &__subtitle {
+        margin-bottom: 1.25rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.1rem;
+        color: $blue;
+    }
+
+    &__text {
+        margin-bottom: 1.25rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+        color: $grey;
+    }
+    &__info {
+        padding-left: 7.5rem;
+    }
+}
+
+.orange {
+    color: $orange;
+}
+
+.blue {
+    color: $blue;
+}
+
+.pink {
+    color: $pink;
+}
+
+.col-12 {
+    width: calc(100% - 1.25rem);
+}
+.col-6 {
+    width: calc(50% - 1.25rem);
+}
+.col-3 {
+    width: calc(25% - 1.25rem);
+}
+
+@include tablets {
+    .place__sections {
+        flex-direction: column;
+
+        &::before {
+            top: 32%;
+            right: 12%;
+        }
+    }
+
+    .place__info {
+        padding-left: 4.6rem;
+    }
+    .col-lg-1 {
+        width: 100%;
+    }
+
+    .col-lg-2 {
+        width: 50%;
+    }
+}
+
+@include mobile {
+    .place {
+        padding-top: 6.25rem;
+    }
+    .col-sm-1 {
+        width: 100%;
+    }
+
+    .place__sections-body {
+        margin: 0 auto;
+        max-width: 29.6rem;
+    }
+
+    .place__info {
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: 3.75rem;
+    }
+
+    .place__title {
+        font-size: 2rem;
+    }
+
+    .place__btn {
+        max-width: 29.6rem;
+        width: 100%;
+    }
+}
